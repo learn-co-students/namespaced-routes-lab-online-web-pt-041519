@@ -1,6 +1,8 @@
 class ArtistsController < ApplicationController
   def index
     @artists = Artist.all
+    #there's no test for this so  i will play with
+    #this on the weekend
   end
 
   def show
@@ -9,6 +11,10 @@ class ArtistsController < ApplicationController
 
   def new
     @artist = Artist.new
+    @preference = Preference.new
+      if !@preference.allow_create_artists
+        redirect_to artists_path
+      end
   end
 
   def create

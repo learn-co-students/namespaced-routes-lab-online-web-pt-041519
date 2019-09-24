@@ -1,3 +1,13 @@
+#My Notes
+Make a migration and a model
+  Preference should have:
+    artist_sort_order: "DESC" string
+    song_sort_order: "ASC     string
+    allow_create_artists: false boolean
+    allow_create_songs: true     boolean
+
+Edit Artist & Song controller new routes.
+
 # Namespaced Routes Lab
 
 ## Objectives
