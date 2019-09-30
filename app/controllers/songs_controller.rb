@@ -25,8 +25,17 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = Song.new
+    if Preference.allow_create_songs == false 
+    redirect_to songs_path
+      else
+        @song = Song.new
+    end
   end
+
+  # "redirects when access is turned off" do
+  #   p = Preference.create(allow_create_songs: false)
+  #   get :new
+  #   expect(response).to redirect_to songs_path
 
   def create
     @song = Song.new(song_params)
