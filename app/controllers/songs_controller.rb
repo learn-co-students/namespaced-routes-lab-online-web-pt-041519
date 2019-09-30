@@ -36,6 +36,8 @@ class SongsController < ApplicationController
   #   p = Preference.create(allow_create_songs: false)
   #   get :new
   #   expect(response).to redirect_to songs_path
+  # or Preference.first?
+  # Note: There will only be 1 instance of Preference
 
   def create
     @song = Song.new(song_params)
