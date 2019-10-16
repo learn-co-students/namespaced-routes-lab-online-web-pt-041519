@@ -1,7 +1,7 @@
 class Admin::PreferencesController < ApplicationController
 
 def index
-    Preference.create(allow_create_songs: false, allow_create_artists: true)
+    @p = Preference.first
 end
 
 end
